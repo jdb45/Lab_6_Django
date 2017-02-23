@@ -1,0 +1,9 @@
+.idea 
+*.pyc
+__pycache__
+djangovirtualenv
+db/
+.DS_Store
+venv
+.idea/
+djangovirtualenv/
