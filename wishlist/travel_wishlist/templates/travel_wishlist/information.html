@@ -1,0 +1,19 @@
+{% extends 'travel_wishlist/base.html' %}
+{% block content %}
+
+<h2>Places that you have not visited yet</h2>
+
+
+<div class="place">
+  <li>{{ info.name }}</li>
+
+  <form method ="POST" action="{% url 'place_is_visited' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="hidden" name="pk" value="{{ info.pk }}">
+    <button type="submit" id="visited_{{ info.pk }}">Visited!</button>
+  </form>
+ </div>
+<a href="{% url 'place_list' %}">Your wishlist</a>
+
+{% endblock %}

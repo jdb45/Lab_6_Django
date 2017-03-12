@@ -8,4 +8,5 @@ venv
 .idea/
 djangovirtualenv/
 db.*
-
+*db
+wishlist/db.*

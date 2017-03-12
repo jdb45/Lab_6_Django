@@ -12,14 +12,12 @@
 {% for place in places %}
 
 <div>
+  {% if place.visited == False %}
+  <a href="{% url 'place_list_information' pk=place.pk %}">{{ place.name }}</a>
 
-  <p id="place_name_{{ place.pk }}">{{ place.name }}</p>
-
-  <form method ="POST" action="{% url 'place_is_visited' %}">
-    {% csrf_token %}
-    <input type="hidden" name="pk" value="{{ place.pk }}">
-    <button type="submit" id="visited_{{ place.pk }}">Visited!</button>
-  </form>
+  {% else %}
+  <a href="{% url 'places_visited' pk=place.pk %}">{{ place.name }}</a>
+  {% endif %}
 
 </div>
 
@@ -28,7 +26,5 @@
 <P>You have no places in your wishlist</p>
 
 {% endfor %}
-
-<a href="{% url 'places_visited' %}">Places you've visited</a>
 
 {% endblock %}

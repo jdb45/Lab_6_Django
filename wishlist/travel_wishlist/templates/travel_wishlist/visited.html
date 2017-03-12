@@ -3,15 +3,15 @@
 
 <h2>Places that you have visited</h2>
 
-{% for place in visited %}
 
-<li>{{ place.name }}</li>
+<p>Location: <em>{{ visited.name }}</em></p>
+<br />
+<p>Date Visited: <em>{{ visited.date }}</em></p>
+<br />
+<p>Notes: <em>{{ visited.notes }}</em></p>
+<br />
 
-{% empty %}
 
-<p>You have not visiter any places yet</p>
-
-{% endfor %}
 
 <a href="{% url 'place_list' %}">Your wishlist</a>
 
